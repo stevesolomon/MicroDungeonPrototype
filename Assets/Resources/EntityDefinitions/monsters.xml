@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<monsters>
+
+  <monster name="slime">
+    <UISprite>Slime</UISprite>
+	<gameSprite>GreenSlime</gameSprite>
+	<gameName>Green Slime</gameName>
+	<goldCost>5</goldCost>
+	<experience>10</experience>
+	<behavior type="MonsterAttackNearestBehavior" />
+	<action type="AttackAction">
+		<speed>0.8</speed>
+		<chargeTime>0.25</chargeTime>
+		<magnitude>2</magnitude>
+		<range>80</range>	
+		<targetType>hero</targetType>
+		<actionModifiers>
+		<!--	<modifier type="TimedMovementModifier">
+				<moveSpeedReductionFactor>0.2</moveSpeedReductionFactor>	
+				<time>2</time>
+			</modifier>	
+			<modifier type="TimedParticleModifier">
+				<particleEffect>AttackEffects/FreezeParticle</particleEffect>
+				<time>2</time>
+			</modifier>-->
+			<icons>
+				<icon>FireIcon</icon>
+			</icons>
+		</actionModifiers>	
+		<projectile type="animated">
+			<name>AnimatedProjectile</name>
+			<animation>SlimeProjectile</animation>
+			<speed>2</speed>
+		    <minDistanceToTarget>5</minDistanceToTarget>
+			<offset x="0" y="-16" />			
+		</projectile>
+		<actionEffects>
+			<actionHit>BasicHitParticle</actionHit>
+		</actionEffects>
+	</action>		
+	<animations>
+		<animation name="idle">0</animation>
+		<animation name="moving">1</animation>
+		<animation name="chargeAction">2</animation>
+		<animation name="death">3</animation>
+	</animations>
+	<audio>
+		<effect name="attackHit">SlimeHitSFX</effect>		
+	</audio>
+    <stats>
+      <health>5</health>      
+      <moveSpeed>20</moveSpeed>
+	  <maxAlive>3</maxAlive>
+	  <spawnTime>3</spawnTime>
+	  <lineOfSightTargeting>true</lineOfSightTargeting>
+    </stats>
+  </monster>  
+	
+	  
+</monsters>

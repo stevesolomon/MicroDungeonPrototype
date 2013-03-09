@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<level>
+
+  <startingGold>20</startingGold>	
+
+  <monsters>
+    <monster name="slime" />
+  </monsters>
+
+  <waves>
+    <wave num="1">
+      <party name="main"/>
+	  <party name="other"/>
+      <hero type="peasant" party="main" spawner="main">
+        <delay>0</delay>
+      </hero>
+      <hero type="peasant" party="main" spawner="main">
+        <delay>3.2</delay>
+      </hero>
+      <hero type="peasant" party="main" spawner="main">
+        <delay>3.2</delay>
+      </hero> 
+    </wave>
+
+    <wave num="2" delay="20">
+      <party name="newWave" />
+      <hero type="peasant" party="newWave" spawner="main">
+        <delay>2</delay>
+      </hero>
+      <hero type="peasant" party="newWave" spawner="main">
+        <delay>4</delay>
+      </hero>
+    </wave>
+  </waves>
+
+</level>

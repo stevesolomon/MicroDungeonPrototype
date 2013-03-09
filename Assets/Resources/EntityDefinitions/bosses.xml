@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<bosses>
+
+  <boss name="slimeboss">
+    <UISprite>Slime</UISprite>
+	<gameName>Slime</gameName>
+	<gameSprite>GreenSlime</gameSprite>
+	<attackEffects>
+		<during>BasicHitParticle</during>
+	</attackEffects>
+		<animations>
+		<animation name="idle">0</animation>
+		<animation name="moving">1</animation>
+		<animation name="chargeAction">2</animation>	
+		<animation name="death">3</animation>
+	</animations>	
+    <stats>
+      <health>10</health>
+      <moveSpeed>30</moveSpeed>
+	  <attackNoticeRadius>100</attackNoticeRadius>
+	  <lineOfSightTargeting>true</lineOfSightTargeting>
+    </stats>
+	<behavior type="BossDefaultAttackBehavior" />
+	<action type="AttackAreaOfEffectAction">
+		<speed>0.75</speed>
+		<chargeTime>0.25</chargeTime>
+		<magnitude>2</magnitude>
+		<range>450</range>
+		<radius>450</radius>
+		<targetType>Hero</targetType>
+		<actionModifiers>
+			<modifier type="TimedMovementModifier">
+				<moveSpeedReductionFactor>0.9</moveSpeedReductionFactor>	
+				<time>2</time>
+			</modifier>	
+			<modifier type="TimedParticleModifier">
+				<particleEffect>AttackEffects/FreezeParticle</particleEffect>
+				<time>2</time>
+			</modifier>
+			<icons>
+				<icon>FireIcon</icon>
+			</icons>
+		</actionModifiers>	
+		<projectile type="animated">
+			<name>AnimatedProjectile</name>
+			<animation>SlimeProjectile</animation>
+			<speed>2</speed>
+		    <minDistanceToTarget>5</minDistanceToTarget>
+			<offset x="0" y="-16" />			
+		</projectile>
+		<actionEffects>
+			<actionHit>BasicHitParticle</actionHit>
+		</actionEffects>
+	</action>		
+  </boss>  
+	  
+</bosses>

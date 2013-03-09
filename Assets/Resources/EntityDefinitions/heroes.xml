@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<heroes>
+
+  <hero name="peasant">
+    <UISprite>SpearPigGUI</UISprite>
+	<gameSprite>SpearPigAnimations</gameSprite>
+	<gameName>Spear Pig</gameName>
+	<gold>2</gold>
+	<attackEffects>
+		<attackHit>HitEffect</attackHit>
+	</attackEffects>
+	<animations>
+		<animation name="idle">0</animation>
+		<animation name="moving">1</animation>
+		<animation name="chargeAction">2</animation>	
+		<animation name="death">3</animation>
+	</animations>	
+    <stats>
+      <health>15</health>
+      <moveSpeed>30</moveSpeed>
+	  <lineOfSightTargeting>true</lineOfSightTargeting>
+    </stats>
+	<behavior type="HeroDefaultBehavior" />
+	<action type="AttackAction">
+		<speed>1.5</speed>
+		<chargeTime>0.75</chargeTime>
+		<magnitude>1</magnitude>
+		<range>150</range>	
+		<targetType>Monster</targetType>		
+		<projectile type="animated">
+			<name>AnimatedProjectile</name>
+			<animation>Arrow</animation>
+			<speed>2</speed>
+		    <minDistanceToTarget>5</minDistanceToTarget>		
+		</projectile>
+		<actionEffects>
+			<actionHit>HitEffect</actionHit>
+		</actionEffects>
+	</action>	
+  </hero>  	 	 	
+  
+</heroes>
